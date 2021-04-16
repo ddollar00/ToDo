@@ -14,7 +14,7 @@ System.out.println(a[i]);
 }
 
 public  static List<String> add(String c){
-list.add(c)
+list.add(c);
 
 }
 
