@@ -2,6 +2,7 @@ import java.util.*;
 
 public class todo{
  private static Map<Integer,String>list=new HashMap<>();
+ public static int c=1;
 public static void main(String[]args){
    Scanner kb = new Scanner(System.in);
    String choice="";
@@ -37,9 +38,10 @@ public static void main(String[]args){
 }
 
 public  static void view(){
-int i=0;
+    int i=1;
 for(String a:list.values()){
-System.out.println(i+1+"."+a );
+   
+System.out.println(i+"."+a );
 i++;
 System.out.println();
 
@@ -48,10 +50,10 @@ System.out.println();
 
 }
 
-public  static void add(String c){
-    int i=1;
-list.put(i,c);
-i++;
+public  static void add(String d){
+   
+list.put(c,d);
+c++;
 
 }
 
