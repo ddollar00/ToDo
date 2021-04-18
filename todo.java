@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class todo{
- private static ArrayList<String>list=new ArrayList<>();
+ private static Map<Integer,String>list=new HashMap<>();
 public static void main(String[]args){
    Scanner kb = new Scanner(System.in);
    String choice="";
@@ -18,11 +18,13 @@ public static void main(String[]args){
             switch(choice) {
                 
                 case "1": 
+                System.out.println("enter an item to add to the list: ");
                 String a=kb.nextLine();
                 add(a);
                 break;
                case "2":
-               String b=kb.nextLine();
+               System.out.println("enter the number of the list entry you want to remove: ");
+              int  b=kb.nextInt();
                     remove(b);             
                break;
                 case "3":
@@ -31,12 +33,14 @@ public static void main(String[]args){
             }
             
             }
+            kb.close();
 }
 
 public  static void view(){
-Object[]a=list.toArray();
-for(int i=0;i<a.length;i++){
-System.out.println(i+1+"."+a[i] );
+int i=0;
+for(String a:list.values()){
+System.out.println(i+1+"."+a );
+i++;
 System.out.println();
 
 
@@ -45,11 +49,13 @@ System.out.println();
 }
 
 public  static void add(String c){
-list.add(c);
+    int i=1;
+list.put(i,c);
+i++;
 
 }
 
-public  static void remove(String c){
+public  static void remove(int  c){
 list.remove(c);
 
 }
